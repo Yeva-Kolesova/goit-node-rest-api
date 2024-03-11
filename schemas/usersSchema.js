@@ -13,3 +13,6 @@ export const signinSchema = Joi.object({
     password: Joi.string().min(6).required(),
 });
 
+export const verifySchema = Joi.object({
+    email: Joi.string().email().required(),
+});
