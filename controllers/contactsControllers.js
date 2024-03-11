@@ -1,5 +1,7 @@
 import * as contactsServices from "../services/contactsServices.js";
 
+import ctrlWrapper from "../decorators/ctrlWrapper.js";
+
 import HttpError from '../helpers/HttpError.js';
 
 import { createContactSchema, updateContactSchema } from "../schemas/contactsSchemas.js"
@@ -100,3 +102,12 @@ export const updateStatusContact = async (req, res, next) => {
         next(error);
     }
 };
+
+// export default {
+//     createContact: ctrlWrapper(createContact),
+//     getAllContacts: ctrlWrapper(getAllContacts),
+//     getOneContact: ctrlWrapper(getOneContact),
+//     deleteContact: ctrlWrapper(deleteContact),
+//     updateContact: ctrlWrapper(updateContact),
+//     updateStatusContact: ctrlWrapper(updateStatusContact),
+// };
