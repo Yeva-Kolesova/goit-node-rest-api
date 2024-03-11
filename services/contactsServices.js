@@ -1,25 +1,45 @@
 import Contact from "../models/Contact.js";
 
-export async function listContacts() {
+export function listContacts() {
     return Contact.find();
 }
 
-export async function getContactById(id) {
+export function listContactsByFilter(filter, query) {
+    return Contact.find(filter, "", query);
+}
+
+export function getContactById(id) {
     return Contact.findById(id);
 }
 
-export async function removeContact(id) {
+export function getContactByFilter(filter) {
+    return Contact.findOne(filter);
+}
+
+export function removeContact(id) {
     return Contact.findByIdAndDelete(id);
 }
 
-export async function addContact(body) {
+export function removeContactByFilter(filter) {
+    return Contact.findOneAndDelete(filter);
+}
+
+export function addContact(body) {
     return Contact.create(body);
 }
 
-export async function updateContact(id, body) {
+export function updateContact(id, body) {
     return Contact.findByIdAndUpdate(id, body);
 }
 
-export async function updateStatus(id, body) {
+export function updateContactByFilter(filter, data) {
+    return Contact.findOneAndUpdate(filter, data);
+}
+
+export function updateStatus(id, body) {
     return Contact.findByIdAndUpdate(id, body);
+}
+
+export function updateStatusContactByFilter(filter, data) {
+    return Contact.findOneAndUpdate(filter, data);
 }
