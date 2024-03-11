@@ -4,6 +4,8 @@ import { findUserById } from "../services/userServices.js";
 
 import HttpError from "../helpers/HttpError.js";
 
+import "dotenv/config";
+
 const { JWT_SECRET } = process.env;
 
 const authtenticate = async (req, res, next) => {
